@@ -31,6 +31,10 @@ public class Splash extends Activity {
 		context = this;
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+		initView();
+	}
+
+	public void initView() {
 		ImageView iv = new ImageView(context);
 		iv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		iv.setScaleType(ScaleType.CENTER_CROP);
