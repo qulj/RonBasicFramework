@@ -33,7 +33,7 @@ public class Splash extends Activity {
 
 		initView();
 	}
-	//加载视图 add
+	//加载视图 
 	public void initView() {
 		ImageView iv = new ImageView(context);
 		iv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
