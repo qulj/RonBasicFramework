@@ -120,7 +120,7 @@ public class PagingRequestActivity extends Activity {
 		listView.stopRefresh();
 		listView.stopLoadMore();
 	}
-
+	
 	/**
 	 * 获取列表数据
 	 * 
