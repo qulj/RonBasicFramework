@@ -75,6 +75,7 @@ public class PagingRequestActivity extends Activity {
 		setContentView(R.layout.paging_layout);
 
 		initView();
+		
 	}
 
 	// 初始化页面控件
@@ -93,14 +94,16 @@ public class PagingRequestActivity extends Activity {
 
 			@Override
 			public void onRefresh() {// 下拉刷新
-				currPage = 1;
+			// currPage = 1;
+			// getFollows();
+				currPage++;
 				getFollows();
 			}
 
 			@Override
 			public void onLoadMore() {// 加载更多
-				currPage++;
-				getFollows();
+			// currPage++;
+			// getFollows();
 			}
 		});
 
@@ -120,7 +123,7 @@ public class PagingRequestActivity extends Activity {
 		listView.stopRefresh();
 		listView.stopLoadMore();
 	}
-	
+
 	/**
 	 * 获取列表数据
 	 * 

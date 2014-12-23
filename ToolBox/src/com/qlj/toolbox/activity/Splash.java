@@ -1,10 +1,13 @@
 package com.qlj.toolbox.activity;
 
+import java.util.HashMap;
+
 import com.qlj.toolbox.R;
 import com.qlj.toolbox.util.AppConstants;
 import com.qlj.toolbox.util.CommonUtil;
 
 import android.app.Activity;
+import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;

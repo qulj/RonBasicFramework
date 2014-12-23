@@ -16,14 +16,14 @@
         android:layout_height="0dp"
         android:layout_weight="1.0" >
 
-        <com.qlj.toolbox.widget.pulltorefresh.ExtListView
+        <ListView
             android:id="@+id/list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:cacheColorHint="@color/transparent"
             android:divider="@null"
             android:listSelector="@color/transparent" >
-        </com.qlj.toolbox.widget.pulltorefresh.ExtListView>
+        </ListView>
 
         <TextView
             android:id="@+id/tv_empty"
