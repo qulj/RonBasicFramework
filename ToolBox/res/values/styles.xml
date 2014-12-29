@@ -1,28 +1,26 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-    
-     <style name="DialogAnimation" parent="@android:style/Animation.Dialog">
+    <style name="AppMainTheme" parent="AppBaseTheme">        All customizations that are NOT specific to a particular API-level can go here.</style>
+
+    <style name="DialogAnimation" parent="@android:style/Animation.Dialog">
         <item name="android:windowEnterAnimation">@anim/push_up_in</item>
         <item name="android:windowExitAnimation">@anim/push_down_out</item>
     </style>
-    
-     <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
@@ -30,13 +28,49 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
-    
-     <style name="ProgressRoundStyle">
+
+    <style name="ProgressRoundStyle">
         <item name="android:indeterminateDrawable">@drawable/progress_customer</item>
         <item name="android:minWidth">30dp</item>
         <item name="android:minHeight">30dp</item>
         <item name="android:maxWidth">30dp</item>
         <item name="android:maxHeight">30dp</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- Actionbar color -->
+        <item name="colorPrimary">@color/accent_material_dark</item>
+        <!-- Status bar color -->
+        <item name="colorPrimaryDark">@color/accent_material_light</item>
+        <!-- Window color -->
+        <item name="android:windowBackground">@color/dim_foreground_material_dark</item>
+        <!-- 将新加入风格 AppTheme.MyDrawerArrowStyle 设定给drawerArrowStyle -->
+        <item name="drawerArrowStyle">@style/AppTheme.MyDrawerArrowStyle</item>
+    </style>
+    <!-- 加入一个新的 navigation drarwer 的风格 -->
+    <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+
+        <!-- 将 spinBars 属性设定为 false -->
+        <item name="spinBars">false</item>
+        <!-- 设定 drawer arrow 的颜色 -->
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="left_drwer_text_style">
+        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

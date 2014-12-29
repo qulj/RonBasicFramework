@@ -16,14 +16,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener
+{
 
 	NetworkImageView img_view;
 
 	ImageLoader imageLoader;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
@@ -34,38 +36,52 @@ public class MainActivity extends Activity implements OnClickListener {
 		findViewById(R.id.btn_base_api).setOnClickListener(this);
 		findViewById(R.id.btn_callback_api).setOnClickListener(this);
 		findViewById(R.id.btn_volley_api).setOnClickListener(this);
+
+		findViewById(R.id.btn_tool_bar).setOnClickListener(this);
 	}
 
-	void stringRequest() {
-		StringRequest stringRequest = new StringRequest("http://www.baidu.com", new Response.Listener<String>() {
+	void stringRequest()
+	{
+		StringRequest stringRequest = new StringRequest("http://www.baidu.com",
+				new Response.Listener<String>()
+				{
 
-			@Override
-			public void onResponse(String response) {
-				Logger.d("TAg", response);
-			}
-		}, new Response.ErrorListener() {
+					@Override
+					public void onResponse(String response)
+					{
+						Logger.d("TAg", response);
+					}
+				}, new Response.ErrorListener()
+				{
 
-			@Override
-			public void onErrorResponse(VolleyError error) {
-				Logger.e("TAg", error.getMessage());
-			}
-		});
+					@Override
+					public void onErrorResponse(VolleyError error)
+					{
+						Logger.e("TAg", error.getMessage());
+					}
+				});
 		stringRequest.setTag(this);
 		ToolBoxApplication.getRequestQueue().add(stringRequest);
 		ToolBoxApplication.getRequestQueue().cancelAll(this);
 	}
 
-	void showImg() {
-		imageLoader = new ImageLoader(ToolBoxApplication.getRequestQueue(), new BitmapCache());
+	void showImg()
+	{
+		imageLoader = new ImageLoader(ToolBoxApplication.getRequestQueue(),
+				new BitmapCache());
 		img_view = (NetworkImageView) findViewById(R.id.img_view);
 		img_view.setDefaultImageResId(R.drawable.ic_launcher);
 		img_view.setErrorImageResId(R.drawable.btn_clear_text);
-		img_view.setImageUrl("http://img.my.csdn.net/uploads/201404/13/1397393290_5765.jpeg", imageLoader);
+		img_view.setImageUrl(
+				"http://img.my.csdn.net/uploads/201404/13/1397393290_5765.jpeg",
+				imageLoader);
 	}
 
 	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
+	public void onClick(View v)
+	{
+		switch (v.getId())
+		{
 		case R.id.btn_str_req:
 			stringRequest();
 			break;
@@ -83,6 +99,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.btn_paging:
 			startActivity(new Intent(this, PagingRequestActivity.class));
+			break;
+		case R.id.btn_tool_bar:
+			startActivity(new Intent(this, ToolBarActivity.class));
 			break;
 		default:
 			break;

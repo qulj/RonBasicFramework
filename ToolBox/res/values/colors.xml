@@ -22,5 +22,9 @@
     <color name="if_6">#f583ff</color>
     <color name="if_7">#cecece</color>
     <color name="if_8">#dfe0e4</color>
+    <!-- start -->
+    <color name="main_color">#03a9f4</color>
+    <color name="left_color">#b3e5fc</color>
+    <!-- end -->
 
 </resources>
